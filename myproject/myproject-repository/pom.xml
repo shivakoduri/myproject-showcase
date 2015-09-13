@@ -7,4 +7,5 @@
   </parent>
   <artifactId>myproject-repository</artifactId>
   <name>My Project - DB</name>
+  <packaging>jar</packaging>
 </project>

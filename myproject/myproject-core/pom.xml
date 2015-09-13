@@ -7,4 +7,5 @@
   </parent>
   <artifactId>myproject-core</artifactId>
   <name>My Project - Core</name>
+  <packaging>jar</packaging>
 </project>

@@ -7,4 +7,5 @@
   </parent>
   <artifactId>myproject-domain</artifactId>
   <name>My Project - Domain</name>
+  <packaging>jar</packaging>
 </project>
