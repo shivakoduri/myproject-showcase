@@ -9,6 +9,7 @@
 		<param-value>
 		classpath*:/META-INF/myproject-ui-applicationContext.xml
 		classpath*:/META-INF/myproject-beans-applicationContext.xml
+		classpath*:/META-INF/myproject-security-applicationContext.xml
 		</param-value>
 	</context-param>
 	
@@ -32,5 +33,17 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	
+	<!-- Spring Security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>
