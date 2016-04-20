@@ -10,7 +10,9 @@
   <properties>
 		<spring.version>4.0.1.RELEASE</spring.version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
-		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+		<spring.security.version>4.0.1.RELEASE</spring.security.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
+		<mysql.connector.version>5.1.31</mysql.connector.version>
   </properties>
   	
   <modules>
@@ -20,6 +22,7 @@
   	<module>myproject-repository</module>
   	<module>myproject-ui</module>
   	<module>myproject-beans</module>
+  	<module>myproject-web</module>
   </modules>
   
   <dependencies>
@@ -71,13 +74,19 @@
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-web</artifactId>
-		<version>3.2.5.RELEASE</version>
+		<version>${spring.security.version}</version>
 	</dependency>
 
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-config</artifactId>
-		<version>3.2.5.RELEASE</version>
+		<version>${spring.security.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${spring.security.version}</version>
 	</dependency>
 	
 	
