@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.myproject.examples.configuration;
+package com.myproject.showcase.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,7 +19,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="com.myproject.examples")
+@ComponentScan(basePackages="com.myproject.showcase")
 public class BasicConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Bean(name="viewResolver")

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.myproject.examples.controller;
+package com.myproject.showcase.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
