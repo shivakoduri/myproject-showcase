@@ -82,6 +82,29 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- Submodule dependencies -->
+		<dependency>
+			<groupId>com.myproject.showcase</groupId>
+			<artifactId>myproject-beans</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.myproject.showcase</groupId>
+			<artifactId>myproject-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.myproject.showcase</groupId>
+			<artifactId>myproject-repository</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

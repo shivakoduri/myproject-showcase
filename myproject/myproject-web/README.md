@@ -1,6 +1,7 @@
 =========
 
 ## Spring security and Hibernate example
+## Demonstrates integrating Hibernate with Spring Security 4 to perform database authentication
 
 ##Define tomcat output directory in pom.xml
  '
