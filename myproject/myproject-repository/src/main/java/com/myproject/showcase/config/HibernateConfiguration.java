@@ -32,7 +32,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @ComponentScan({ "com.myproject.showcase" })
 @PropertySource(value = { "classpath:application.properties" })
-public class RepositoryHibernateConfiguration {
+public class HibernateConfiguration {
 
     @Autowired
     private Environment environment;

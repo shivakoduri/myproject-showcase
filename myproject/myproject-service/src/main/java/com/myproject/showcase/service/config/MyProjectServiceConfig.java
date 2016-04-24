@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import com.myproject.showcase.config.RepositoryHibernateConfiguration;
+import com.myproject.showcase.config.HibernateConfiguration;
 
 /**
  * @author shiva koduri
@@ -15,7 +15,7 @@ import com.myproject.showcase.config.RepositoryHibernateConfiguration;
  */
 @Configuration
 @ComponentScan({ "com.myproject.showcase" })
-@Import(RepositoryHibernateConfiguration.class)
+@Import(HibernateConfiguration.class)
 public class MyProjectServiceConfig {
 
 }

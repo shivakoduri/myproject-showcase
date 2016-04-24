@@ -16,7 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.myproject.showcase.config.RepositoryHibernateConfiguration;
+import com.myproject.showcase.config.HibernateConfiguration;
 import com.myproject.showcase.web.dao.UserDao;
 import com.myproject.showcase.web.model.User;
 
@@ -25,7 +25,7 @@ import com.myproject.showcase.web.model.User;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={RepositoryHibernateConfiguration.class}, loader=AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes={HibernateConfiguration.class}, loader=AnnotationConfigContextLoader.class)
 public class UserDaoTest {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserDaoTest.class);
