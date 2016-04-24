@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import com.myproject.showcase.enums.State;
 
+
+
 @Entity
 @Table(name="APP_USER")
 public class User {

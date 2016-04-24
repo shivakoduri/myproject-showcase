@@ -1,15 +1,16 @@
-package com.myproject.showcase.web.dao;
+package com.myproject.showcase.web.service;
 
 import java.util.List;
 
 import com.myproject.showcase.web.model.User;
 
 
-public interface UserDao {
+
+public interface UserService {
 
 	User findById(int id);
 	
-	User findBySSO(String sso);
+	User findBySso(String sso);
 	
 	User findByName(String name);
 	
@@ -26,4 +27,3 @@ public interface UserDao {
 	boolean isUserExist(User user);
 	
 }
-

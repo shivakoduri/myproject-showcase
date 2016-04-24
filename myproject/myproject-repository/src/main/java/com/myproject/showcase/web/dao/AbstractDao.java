@@ -1,14 +1,15 @@
 package com.myproject.showcase.web.dao;
 
 import java.io.Serializable;
-
 import java.lang.reflect.ParameterizedType;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public abstract class AbstractDao<PK extends Serializable, T> {
 	
 	private final Class<T> persistentClass;
@@ -41,5 +42,6 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	protected Criteria createEntityCriteria(){
 		return getSession().createCriteria(persistentClass);
 	}
+	
 
 }

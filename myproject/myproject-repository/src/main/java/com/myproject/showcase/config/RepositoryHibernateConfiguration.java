@@ -1,4 +1,4 @@
-package com.myproject.showcase.configuration;
+package com.myproject.showcase.config;
 
 import java.util.Properties;
 
@@ -26,11 +26,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *         contains connection details for MySQL database.
  *
  */
+
+
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "com.myproject.showcase" })
 @PropertySource(value = { "classpath:application.properties" })
-public class HibernateConfiguration {
+public class RepositoryHibernateConfiguration {
 
     @Autowired
     private Environment environment;

@@ -1,33 +1,34 @@
-package com.myproject.showcase.web.dao;
+package com.myproject.showcase.web.service;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.myproject.showcase.web.dao.UserDao;
 import com.myproject.showcase.web.model.User;
 
 
+@Service("userService")
+@Transactional
+public class UserServiceImpl implements UserService{
 
-@Repository("userDao")
-public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
+	@Autowired
+	private UserDao dao;
 
 	public User findById(int id) {
-		return getByKey(id);
+		return dao.findById(id);
 	}
 
-	public User findBySSO(String sso) {
-		Criteria crit = createEntityCriteria();
-		crit.add(Restrictions.eq("ssoId", sso));
-		return (User) crit.uniqueResult();
+	public User findBySso(String sso) {
+		return dao.findBySSO(sso);
 	}
 
 	@Override
 	public User findByName(String name) {
-		Criteria crit = createEntityCriteria();
-		crit.add(Restrictions.eq("firstName", name));
-		return (User) crit.uniqueResult();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -50,7 +51,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
 	@Override
 	public List<User> findAllUsers() {
-		
+		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -65,8 +66,5 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	
 
-	
 }

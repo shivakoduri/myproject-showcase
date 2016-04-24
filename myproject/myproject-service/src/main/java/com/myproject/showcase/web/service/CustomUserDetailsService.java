@@ -1,4 +1,4 @@
-package com.myproject.showcase.service;
+package com.myproject.showcase.web.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.myproject.showcase.web.model.User;
 import com.myproject.showcase.web.model.UserProfile;
-
 
 /**
  * 

@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import com.myproject.showcase.enums.UserProfileType;
 
+
+
 @Entity
 @Table(name="USER_PROFILE")
 public class UserProfile {
