@@ -7,18 +7,11 @@ import com.myproject.showcase.service.config.MyProjectServiceConfig;
 
 
 /**
- * 
  * @author shiva koduri
- * 
- *         Hibernate configuration class contains @Bean
- *         methods for DataSource, SessionFactory & Transaction Manager.
- *         Datasource properties are taken from application.properties file and
- *         contains connection details for MySQL database.
- *
  */
 @Configuration
 @Import(MyProjectServiceConfig.class)
-public class DatabaseConfiguration {
+public class ServiceConfiguration {
 
 }
 
