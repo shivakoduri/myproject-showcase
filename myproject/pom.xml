@@ -25,6 +25,7 @@
   	<module>myproject-ui</module>
   	<module>myproject-beans</module>
   	<module>myproject-web</module>
+  	<module>myproject-repository-jpa</module>
   </modules>
   
   <dependencies>

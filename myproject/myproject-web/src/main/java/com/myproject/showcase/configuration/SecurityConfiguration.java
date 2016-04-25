@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import com.myproject.showcase.handler.CustomSuccessHandler;
+
 
 /**
  * 
@@ -31,6 +33,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	UserDetailsService userDetailsService;
 	
 	@Autowired
+	CustomSuccessHandler customSuccessHandler;
+	
+	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
 	}
@@ -38,10 +43,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	  http.authorizeRequests()
-	  	.antMatchers("/", "/home").permitAll()
+//	  	.antMatchers("/", "/home").permitAll()
+	  	.antMatchers("/", "/home").access("hasRole('USER')")
 	  	.antMatchers("/admin/**").access("hasRole('ADMIN')")
 	  	.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
-	  	.and().formLogin().loginPage("/login")
+//	  	.and().formLogin().loginPage("/login")
+	   	.and().formLogin().loginPage("/login").successHandler(customSuccessHandler)
 	  	.usernameParameter("ssoId").passwordParameter("password")
 	  	.and().csrf()
 	  	.and().exceptionHandling().accessDeniedPage("/Access_Denied");
@@ -73,6 +80,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     </authentication-manager>
       
     <beans:bean id="customUserDetailsService" class="com.websystique.springsecurity.service.CustomUserDetailsService" />
+    <beans:bean id="customSuccessHandler"     class="com.websystique.springsecurity.configuration.CustomSuccessHandler" />
+     
      
 	</beans:beans>
 	 * 

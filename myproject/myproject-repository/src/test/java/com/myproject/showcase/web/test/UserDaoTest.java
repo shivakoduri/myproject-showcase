@@ -5,6 +5,8 @@ package com.myproject.showcase.web.test;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.junit.Test;
@@ -51,6 +53,25 @@ public class UserDaoTest {
 		System.out.println("userLastName:" + user.getLastName());
 		assertNotNull(userDao);
 		
+	}
+	
+	@Test
+	@Transactional
+	public void testGetAllUsers(){
+		logger.debug("--Inside testGetAllUsers method..");
+		List<User> users = userDao.findAllUsers();
+		for(User user : users){
+			System.out.println("user name:"+ user.getFirstName());
+		}
+	}
+	
+	@Test
+	@Transactional
+	public void testisUserExists(){
+		logger.debug("Inside testisUserExists method...");
+		User user = userDao.findById(1);
+		assertNotNull(user);
+		System.out.println(userDao.isUserExist(user));
 	}
 
 }
