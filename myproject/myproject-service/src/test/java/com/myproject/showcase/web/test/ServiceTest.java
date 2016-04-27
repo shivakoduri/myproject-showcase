@@ -28,6 +28,7 @@ import com.myproject.showcase.web.service.UserService;
 public class ServiceTest {
 	
 	@Autowired
+	@Qualifier("userService")
 	private UserService userService;
 	
 	@Autowired

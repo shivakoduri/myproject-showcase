@@ -22,10 +22,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BasicController {
 	
-	@RequestMapping(value={"/","/home"}, method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String homepage(ModelMap model){
 		model.addAttribute("greeting", "Hi, Welcome to mysite");
 		return "webwelcome";
+	}
+	
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public String userpage(){
+		return "userManagement";
 	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)

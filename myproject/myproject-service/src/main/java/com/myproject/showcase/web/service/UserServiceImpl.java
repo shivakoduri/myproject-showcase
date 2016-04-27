@@ -27,44 +27,37 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public User findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findByName(name);
 	}
 
 	@Override
 	public void saveUser(User user) {
-		// TODO Auto-generated method stub
-		
+		dao.saveUser(user);
 	}
 
 	@Override
 	public void updateUser(User user) {
-		// TODO Auto-generated method stub
-		
+		dao.updateUser(user);
 	}
 
 	@Override
 	public void deleteUserById(long id) {
-		// TODO Auto-generated method stub
-		
+		dao.deleteUserById(id);
 	}
 
 	@Override
 	public List<User> findAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAllUsers();
 	}
 
 	@Override
 	public void deleteAllUsers() {
-		// TODO Auto-generated method stub
-		
+		dao.deleteAllUsers();
 	}
 
 	@Override
 	public boolean isUserExist(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		return dao.isUserExist(user);
 	}
 
 }

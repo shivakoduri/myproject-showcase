@@ -3,7 +3,11 @@
  */
 package com.myproject.showcase.configuration;
 
+import javax.servlet.Filter;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.myproject.showcase.filter.CORSFilter;
 
 /**
  * @author shiva koduri
@@ -26,6 +30,12 @@ public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServ
 	@Override
 	protected String[] getServletMappings() {
 		return new String[]{"/"};
+	}
+	
+	@Override
+	protected Filter[] getServletFilters() {
+    	Filter [] singleton = { new CORSFilter() };
+    	return singleton;
 	}
 
 	

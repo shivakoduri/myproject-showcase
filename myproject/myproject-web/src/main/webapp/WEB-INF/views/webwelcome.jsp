@@ -8,5 +8,6 @@
 <body>
 	Greeting : ${greeting}
 	This is a welcome page.
+	
 </body>
 </html>
